@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    <div class="dropdown-container">
+        <select id="moedaOrigem"></select>
+    </div>
+    <div class="container">
+        <div class="conversao">
+            <span id="simboloOrigem">US$</span>
+            <input type="number" id="valorOrigem" value="1" step="0.01">
+            <span class="texto-verde">vale</span>
+            <span id="simboloDestino">R$</span>
+            <input type="number" id="valorDestino" value="0.00" step="0.01">
+            <span class="texto-verde">hoje</span>
+        </div>
+        
+        <p id="data"></p>
+<!--
+        <div class="anuncio">Espaço reservado para anúncios</div>
+    -->
+    </div>
+    <script src="js/moedasInfo.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

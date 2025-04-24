@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.dropdown-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dropdown-container select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+}
+
+.conversao {
+    font-size: 2.5rem;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.conversao input {
+    font-size: 2.5rem;
+    color: #555;
+    border: none;
+    background-color: transparent;
+    max-width: 180px;
+    text-align: center;
+}
+
+.conversao input:focus {
+    outline: none;
+}
+
+.texto-verde {
+    font-size: 1rem;
+    color: #85c341;
+}
+
+.anuncio {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 2px dashed #ccc;
+    color: #bbb;
+}
+
+@media (max-width: 500px) {
+    .conversao {
+        flex-direction: column;
+    }
+
+    .dropdown-container {
+        position: static;
+        margin-bottom: 10px;
+    }
+}
