@@ -2,38 +2,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor Euro-BRL</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Moedas</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  
-  <label class="theme-switch" style="position: absolute; top: 20px; right: 20px;">
-    <input type="checkbox" id="themeToggle">
-    <span class="slider round">
-      <span class="icon-moon">🌙</span>
-      <span class="icon-sun">☀️</span>
-    </span>
-  </label>
+  <nav class="navbar">
+    <div class="navbar-title">Conversor</div>
+    <div class="dropdown">
+      <span class="dropdown-toggle">🌍 Moeda Base</span>
+      <div class="dropdown-menu" id="moedasMenu"></div>
+    </div>
+    <label class="theme-switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider round">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+      </span>
+    </label>
+  </nav>
+
   <div class="container">
-    <img src="https://flagcdn.com/256x192/eu.png" alt="Bandeira Euro" class="flag">
+    <img id="moedaFlag" src="https://flagcdn.com/256x192/eu.png" alt="Bandeira" class="flag" />
     <div class="value">
       <div class="input-wrapper">
-        <input type="text" id="eurInput" class="input-text" placeholder="1,00" value="1,00">
-        <span class="symbol">€</span>
+        <input type="text" id="baseInput" class="input-text" value="1,00" />
+        <span class="symbol" id="baseSymbol">€</span>
       </div>
       <div class="input-wrapper">
-        <input type="text" id="brlInput" class="input-text" placeholder="0,00">
+        <input type="text" id="brlInput" class="input-text" placeholder="0,00" />
         <span class="symbol">R$</span>
       </div>
     </div>
     <p id="exchangeRate" class="rate-info"></p>
   </div>
-  <div class="chart-section">
-    <!--<canvas id="rateChart" width="800" height="300"></canvas>-->
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="js/moedasInfo.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
