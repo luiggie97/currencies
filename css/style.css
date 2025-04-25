@@ -329,7 +329,7 @@ input:checked + .slider .icon-sun {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 120%;
+  top: 105%;
   background: white;
   color: #333;
   border-radius: 6px;
@@ -389,4 +389,80 @@ html:not([data-theme='dark']) {
 
 .dropdown.left {
   order: -1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #2a84c9;
+  box-shadow: 0 0 4px rgba(42,132,201,0.6);
+}
+
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Ajuste visual do hover no dark mode */
+html[data-theme="dark"] .moeda-item:hover {
+  background-color: #2f2f2f !important;
+}
+
+/* Ajuste da cor do grupo de moedas no dark */
+html[data-theme="dark"] .continent {
+  color: #7cb1ff !important;
+}
+
+/* Toggle personalizado: centralizar sol e lua */
+.theme-switch .slider .icon-sun,
+.theme-switch .slider .icon-moon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Manter visibilidade do menu ao reabrir */
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-toggle {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .dropdown-toggle {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+html[data-theme="light"] .dropdown-toggle {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Garantir que o menu abre ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown.dropdown-oculto .dropdown-menu {
+  display: none !important;
 }
