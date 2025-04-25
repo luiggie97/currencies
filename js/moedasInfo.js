@@ -1,120 +1,120 @@
-const moedasInfo = {
+const moedasInfo = { 
   "USD": {
-    "nome": "Estados Unidos / Dólar",
+    "nome": "EUA/Dólar",
     "simbolo": "US$",
     "codigoPais": "us",
     "continente": "América do Norte"
   },
   "EUR": {
-    "nome": "União Europeia / Euro",
+    "nome": "U. Europeia/Euro",
     "simbolo": "€",
     "codigoPais": "eu",
     "continente": "Europa"
   },
   "BRL": {
-    "nome": "Brasil / Real",
+    "nome": "Brasil/Real",
     "simbolo": "R$",
     "codigoPais": "br",
     "continente": "América do Sul"
   },
   "JPY": {
-    "nome": "Japão / Yen",
+    "nome": "Japão/Yen",
     "simbolo": "¥",
     "codigoPais": "jp",
     "continente": "Ásia"
   },
   "GBP": {
-    "nome": "Reino Unido",
+    "nome": "Inglaterra/Libra",
     "simbolo": "£",
     "codigoPais": "gb",
     "continente": "Europa"
   },
   "AUD": {
-    "nome": "Austrália",
+    "nome": "Austrália/Dólar",
     "simbolo": "A$",
     "codigoPais": "au",
     "continente": "Oceania"
   },
   "CAD": {
-    "nome": "Canadá",
+    "nome": "Canadá/Dólar",
     "simbolo": "C$",
     "codigoPais": "ca",
     "continente": "América do Norte"
   },
   "CHF": {
-    "nome": "Suíça",
+    "nome": "Suíça/Franco",
     "simbolo": "CHF",
     "codigoPais": "ch",
     "continente": "Europa"
   },
   "CNY": {
-    "nome": "China",
+    "nome": "China/Yuan",
     "simbolo": "¥",
     "codigoPais": "cn",
     "continente": "Ásia"
   },
   "SEK": {
-    "nome": "Suécia",
+    "nome": "Suécia/Coroa",
     "simbolo": "kr",
     "codigoPais": "se",
     "continente": "Europa"
   },
   "NZD": {
-    "nome": "Nova Zelândia",
+    "nome": "N. Zelândia/Dólar",
     "simbolo": "NZ$",
     "codigoPais": "nz",
     "continente": "Oceania"
   },
   "MXN": {
-    "nome": "México",
+    "nome": "México/Peso",
     "simbolo": "$",
     "codigoPais": "mx",
     "continente": "América do Norte"
   },
   "SGD": {
-    "nome": "Singapura",
+    "nome": "Singapura/Dólar",
     "simbolo": "S$",
     "codigoPais": "sg",
     "continente": "Ásia"
   },
   "HKD": {
-    "nome": "Hong Kong",
+    "nome": "Hong Kong/Dólar",
     "simbolo": "HK$",
     "codigoPais": "hk",
     "continente": "Ásia"
   },
   "NOK": {
-    "nome": "Noruega",
+    "nome": "Noruega/Coroa",
     "simbolo": "kr",
     "codigoPais": "no",
     "continente": "Europa"
   },
   "KRW": {
-    "nome": "Coreia do Sul",
+    "nome": "Coreia do Sul/Won",
     "simbolo": "₩",
     "codigoPais": "kr",
     "continente": "Ásia"
   },
   "TRY": {
-    "nome": "Turquia",
+    "nome": "Turquia/Lira",
     "simbolo": "₺",
     "codigoPais": "tr",
     "continente": "Ásia"
   },
   "RUB": {
-    "nome": "Rússia",
+    "nome": "Rússia/Rublo",
     "simbolo": "₽",
     "codigoPais": "ru",
     "continente": "Europa"
   },
   "INR": {
-    "nome": "Índia",
+    "nome": "Índia/Rúpia",
     "simbolo": "₹",
     "codigoPais": "in",
     "continente": "Ásia"
   },
   "ZAR": {
-    "nome": "África do Sul",
+    "nome": "África do Sul/Rand",
     "simbolo": "R",
     "codigoPais": "za",
     "continente": "África"
