@@ -155,6 +155,7 @@ function switchCurrency(codigo, simbolo, codigoPais) {
   fetchAndUpdateRate(codigo);
   adjustInputPadding();
   localStorage.setItem("moedaBase", codigo);
+  atualizarRota(info.nome);
   document.querySelector(".dropdown").classList.add("dropdown-oculto");
   
 }
@@ -176,6 +177,7 @@ function switchToCrypto(codigo) {
       convertToBRL();
       adjustInputPadding();
       localStorage.setItem("moedaBase", codigo);
+  atualizarRota(info.nome);
       document.querySelector(".dropdown").classList.add("dropdown-oculto");
       
     })
@@ -187,6 +189,7 @@ function switchToCrypto(codigo) {
       convertToBRL();
       adjustInputPadding();
       localStorage.setItem("moedaBase", codigo);
+  atualizarRota(info.nome);
       document.querySelector(".dropdown").classList.add("dropdown-oculto");
       
     });
@@ -270,6 +273,7 @@ function switchToPrincipal(codigo) {
   fetchAndUpdateRate(codigo);
   adjustInputPadding();
   localStorage.setItem("moedaBase", codigo);
+  atualizarRota(info.nome);
   document.querySelector(".dropdown").classList.add("dropdown-oculto");
 }
 
@@ -281,5 +285,57 @@ function switchToCommodity(codigo) {
   fetchAndUpdateRate(codigo);
   adjustInputPadding();
   localStorage.setItem("moedaBase", codigo);
+  atualizarRota(info.nome);
   document.querySelector(".dropdown").classList.add("dropdown-oculto");
 }
+
+
+function atualizarRota(nome) {
+  const slug = nome.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/ /g, '-').replace(/\//g, '-');
+  const novaURL = window.location.origin + '/agora-' + slug;
+  window.history.pushState({}, '', novaURL);
+}
+
+function detectarRota() {
+  const path = window.location.pathname;
+  if (path.startsWith("/agora-")) {
+    const slug = path.replace("/agora-", "").replace(/-/g, " ").toLowerCase();
+
+    let encontrada = false;
+
+    for (const codigo in principalInfo) {
+      const info = principalInfo[codigo];
+      if (info.nome.toLowerCase().replace(/ /g, '') === slug.replace(/ /g, '')) {
+        switchToPrincipal(codigo);
+        encontrada = true;
+        break;
+      }
+    }
+
+    if (!encontrada) {
+      for (const codigo in moedasInfo) {
+        const info = moedasInfo[codigo];
+        if (info.nome.toLowerCase().replace(/ /g, '') === slug.replace(/ /g, '')) {
+          switchCurrency(codigo, info.simbolo, info.codigoPais);
+          encontrada = true;
+          break;
+        }
+      }
+    }
+
+    if (!encontrada) {
+      for (const codigo in cryptoInfo) {
+        const info = cryptoInfo[codigo];
+        if (info.nome.toLowerCase().replace(/ /g, '') === slug.replace(/ /g, '')) {
+          switchToCrypto(codigo);
+          break;
+        }
+      }
+    }
+  }
+}
+
+// Chamar detectarRota quando o DOM carregar
+document.addEventListener("DOMContentLoaded", () => {
+  detectarRota();
+});
